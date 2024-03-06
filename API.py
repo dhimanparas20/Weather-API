@@ -1,5 +1,4 @@
 from requests_html import HTMLSession
-import os
 
 s = HTMLSession()
 DEFAULT_USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
@@ -32,14 +31,14 @@ def getWeather(city=None):
         for i in range(8, len(basedata), 2):
             datalst.append(basedata[i])
         for i in range(0, len(weeklst) - 1):
-            weekdict[weeklst[i]] = {"max": datalst[gap] + "°F", "min": datalst[gap + 1] + "°F"}
+            weekdict[weeklst[i]] = {"max": datalst[gap] + " F", "min": datalst[gap + 1] + " F"}
             gap += 2
         data = {
             "location": location,
             "current": {
                 "day": today,
                 "summary": summary,
-                "temperature": temp + "°F",
+                "temperature": temp + " F",
                 "precipitation": precipitation,
                 "humidity": humidity,
                 "wind": wind
@@ -67,14 +66,14 @@ def getWeatherF(city=None):
         for i in range(9, len(basedata), 2):
             datalst.append(basedata[i])
         for i in range(0, len(weeklst) - 1):
-            weekdict[weeklst[i]] = {"max": datalst[gap] + "°C", "min": datalst[gap + 1] + "°C"}
+            weekdict[weeklst[i]] = {"max": datalst[gap] + " C", "min": datalst[gap + 1] + " C"}
             gap += 2
         data = {
             "location": location,
             "current": {
                 "day": today,
                 "summary": summary,
-                "temperature": temp + "°C",
+                "temperature": temp + " C",
                 "precipitation": precipitation,
                 "humidity": humidity,
                 "wind": wind
