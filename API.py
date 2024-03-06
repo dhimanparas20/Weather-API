@@ -31,9 +31,9 @@ def getWeather(city=None,user_agent=user_agent):
         for i in range(8,len(basedata),2):
             datalst.append(basedata[i])
         for i in range(0,len(weeklst)-1):
-            weekdict[weeklst[i]]={"max":datalst[gap]+"°C","min":datalst[gap+1]+"°C"}
+            weekdict[weeklst[i]]={"max":datalst[gap]+"°F","min":datalst[gap+1]+"°F"}
             gap += 2
-        data = {"location":location,"current":{"day":today,"summary":summary,"temperature":temp+"°C","precipitation":precipitation,"humidity":humidity,"wind":wind},"weeklyforecast":weekdict}  
+        data = {"location":location,"current":{"day":today,"summary":summary,"temperature":temp+"°F","precipitation":precipitation,"humidity":humidity,"wind":wind},"weeklyforecast":weekdict}  
         return data
     return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET"})
 
@@ -51,9 +51,9 @@ def getWeatherF(city=None,user_agent=user_agent):
         for i in range(9,len(basedata),2):
             datalst.append(basedata[i])
         for i in range(0,len(weeklst)-1):
-            weekdict[weeklst[i]]={"max":datalst[gap]+"°F","min":datalst[gap+1]+"°F"}
+            weekdict[weeklst[i]]={"max":datalst[gap]+"°C","min":datalst[gap+1]+"°C"}
             gap += 2
-        data = {"location":location,"current":{"day":today,"summary":summary,"temperature":temp+"°F","precipitation":precipitation,"humidity":humidity,"wind":wind},"weeklyforecast":weekdict}  
+        data = {"location":location,"current":{"day":today,"summary":summary,"temperature":temp+"°C","precipitation":precipitation,"humidity":humidity,"wind":wind},"weeklyforecast":weekdict}  
         return data
     return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET"})
 
