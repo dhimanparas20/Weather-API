@@ -5,6 +5,7 @@ from API import getWeather,getWeatherF
 # Objects and imprtant variables
 app = Flask(__name__)
 api = Api(app)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 unitlst = ['C',"c","F","f"]
 
 class Home(Resource):
