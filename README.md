@@ -62,7 +62,7 @@ pip3 install requirements.txt
 python3 app.py
 ```
 ### or
-[This API is deployed on Vercel for general use.]()
+[This API is deployed on Vercel for general use.](https://weather-iota-tan.vercel.app/api/)
 
 
 ## License
