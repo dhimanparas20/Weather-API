@@ -16,7 +16,7 @@ class Home(Resource):
             return getWeather(city=city,user_agent=user_agent)
         if query:
             return getWeather(city=query,user_agent=user_agent)
-        return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET","Examples":{"EG1":f"{current_domain}api/weather/Shimla","EG2":f"{current_domain}api/weather?city=Shimla"}})
+        return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET","Examples":{"EG1":f"{current_domain}api/weather/Shimla","EG2":f"{current_domain}api/weather?city=Shimla","EG3":f"{current_domain}api/weatherf/171009","EG4":f"{current_domain}api/weatherf?city=171202"}})
         
 class HomeF(Resource):
     def get(self, city=None):
@@ -27,8 +27,8 @@ class HomeF(Resource):
             return getWeatherF(city=city,user_agent=user_agent)
         if query:
             return getWeatherF(city=query,user_agent=user_agent)
-        return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET","Examples":{"EG1":f"{current_domain}api/weather/Shimla","EG2":f"{current_domain}api/weather?city=Shimla"}})        
-
+        return({"message":"No city name Provided","syntax1":f"/api/weather/<City Name>","syntax2":f"/api/weather?city=<City Name>","Request Type":"GET","Examples":{"EG1":f"{current_domain}api/weather/Shimla","EG2":f"{current_domain}api/weather?city=Shimla","EG3":f"{current_domain}api/weatherf/171009","EG4":f"{current_domain}api/weatherf?city=171202"}})
+        
 api.add_resource(HomeF, '/','/api/weather','/api/weather/<city>',methods=['GET'])
 api.add_resource(Home,'/api/weatherf','/api/weatherf/<city>',methods=['GET'])
 
